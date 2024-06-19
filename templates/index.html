@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Campus Solutions</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+        * {
+            padding: 0;
+            margin: 0;
+            
+        }
+
+        body {
+            background: rgb(115,107,241);
+            background: linear-gradient(90deg, rgba(115,107,241,1) 0%, rgba(0,204,255,1) 69%, rgba(114,231,255,1) 100%);
+            font-family: 'Jost', sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            align-items: center;
+            background-color: #0986cf4f;
+        }
+
+        .navbar .left, .navbar .right {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .navbar h1 {
+            font-size: 30px;
+            color: rgb(242, 234, 243);
+            text-shadow: 3px 3px 0px rgb(92, 92, 92);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: rgba(13, 7, 161, 0.989);
+            font-weight: 600;
+        }
+
+        .page1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px;
+            gap: 100px;
+            flex-wrap: wrap;
+        }
+
+        .page1left {
+            height: 1200px;
+            width: 1200px;
+            border: 3px rgb(61, 61, 61) solid;
+            border-radius: 50px;
+            filter: drop-shadow(10px 10px 10px black);
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        .page1right {
+            height: 1200px;
+            width: 1200px;
+            margin-top: 700px;
+            border: 3px rgb(77, 77, 77) solid;
+            border-radius: 50px;
+            filter: drop-shadow(10px 10px 10px black);
+            background: linear-gradient(90deg, rgba(255,85,85,1) 0%, rgba(153,51,204,1) 69%, rgba(119,0,255,1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+       
+
+        .chatbot-container {
+            background-color: transparent;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            filter: drop-shadow(10px 10px 10px black);
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-header {
+            display: flex;
+            justify-content: center;
+            height: 200px;
+            background-color: transparent;
+            padding: 5px;
+            font-size: 60px;
+            align-items: center;
+            color: #fcfcfc;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .chatbot-header h1 {
+            font-size: 2rem;
+            color: rgb(247, 240, 240);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px 20px;
+            border-radius: 8px;
+            margin: 300px;
+            max-width: 100%;
+            max-height: 100%;
+            align-self: flex-end;
+            text-align: center;
+            height: 900px;
+            width:900px;
+        }
+
+        .chatbot-messages p2 {
+            color: rgb(255, 255, 255);
+            font-size: xx-large;
+            margin-left: 100px;
+        }
+
+        .chatbot-messages p {
+            color: rgb(255, 255, 255);
+            font-size: xx-large;
+            margin-left: 100px;
+        }
+
+        .chat-input {
+            padding: 20px;
+            background-color: transparent;
+            display: flex;
+        }
+
+        .chat-input input , .contact-form input , .contact-form textarea {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #090707;
+            border-radius: 8px;
+            font-size: xx-large;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 15px;
+            margin-top: 200;
+            border: 2px solid #090707;
+            border-radius: 8px;
+            font-size: xx-large;
+        }
+
+        .chat-input button ,.contact-form button {
+            background-color: #dee8f1;
+            color: #007BFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .chat-input button:hover,.contact-form button:hover {
+            background-color: #007BFF;
+            color: #FFFFFF;
+        }
+
+        .about-section{
+            padding: 50px;
+            background-color: black;
+            margin: 20px auto ;
+            width: 80%;
+            border-radius: 15px;
+            filter: drop-shadow(0 0 10px gray);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+        .who-we-are-section {
+            padding: 50px;
+            background:linear-gradient(90deg, rgba(255,87,255,1) 0%, rgba(255, 204, 51, 0.966) 69%, rgba(255,255,153,1) 100%);
+            ;
+            margin: 20px auto ;
+            width: 80%;
+            border-radius: 15px;
+            filter: drop-shadow(0 0 10px gray);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+        .Developers-section {
+            padding: 50px;
+            background:linear-gradient(90deg, rgba(0,147,233,1) 0%, rgba(0,220,180,1) 69%, rgba(114,255,182,1) 100%);
+            margin: 20px auto ;
+            width: 80%;
+            border-radius: 15px;
+            filter: drop-shadow(0 0 10px gray);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+        .help-section{
+            padding: 50px;
+            background: linear-gradient(90deg, rgba(0,184,148,1) 0%, rgba(9,132,227,1) 69%, rgba(116,185,255,1) 100%);
+            margin-top: 1600px ;
+            width: 80%;
+            border-radius: 15px;
+            filter: drop-shadow(0 0 10px gray);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px; 
+        }
+        .contact-form  {
+            font-size: xx-large;
+            font-weight: bolder;
+            font-style: oblique;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-variant: normal;
+        }
+        #name{
+            font-size: xx-small;
+        }
+        #email{
+            font-size: xx-small;
+        }
+        #message{
+            font-size: xx-small;
+        }
+
+        .about-section h2, .who-we-are-section h2, .Developers-section h2 {
+            font-size: 2.5rem;
+            color: #0a0ad3;
+            margin-bottom: 20px;
+            flex-basis: 100%;
+        }
+        .help-section h2 {
+            font-size: 1.5;
+            color: #0a0ad3;
+            margin-bottom: 10px;
+            flex-basis: 100%;
+        }
+
+        .about-section p, .who-we-are-section p, .Developers-section {
+            font-size: 1.5rem;
+            color: #f0fe58;
+            line-height: 1.6;
+            flex-basis: 100%;
+        }
+        .help-section p {
+            font-size: 1.5rem;
+            color: #f0fe58;
+            line-height: 1.0;
+            flex-basis: 100%;
+        }
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            filter: drop-shadow(0 0 10px gray);
+        }
+
+        .about-content {
+            flex: 2;
+        }
+
+        .team-member {
+            margin-bottom: 20px;
+            flex-basis: 100%;
+        }
+
+        .team-member h3 {
+            font-size: 2rem;
+            color: #00ff2a;
+        }
+
+        footer {
+            background-color: #109bf8d7;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="left">
+            <a href="#HOME">HOME</a>
+        </div>
+        <h1>SMART CAMPUS SOLUTIONS</h1>
+        <div class="right">
+            <a href="#ABOUT">ABOUT</a>
+            <a href="#who-we-are">WHO WE ARE</a>
+            <a href="#Developers">DEVELOPERS</a>
+            <a href="#help">HELP</a>
+        </div>
+    </div>
+</header>
+<div id="about" class="about-section">
+    <div class="about-content">
+        <h2>About This Website</h2>
+        <p>This website features an advanced Chatbot and a Face Recognition Attendance System designed by IIT Patna students. The Chatbot, developed using Python, assists students with their queries. The Face Recognition system ensures efficient and secure attendance tracking.</p>
+    </div>       
+    </div>
+    <div id="who-we-are" class="who-we-are-section">
+        <h2>Who We Are</h2>
+        <div class="about-section">
+            <h2>About This Project</h2>
+            <p>Smart Campus Solutions aims to enhance the educational experience  through innovative technology solutions. Our focus is on providing efficient tools like the Chatbot and Face Recognition Attendance System to streamline campus operations.</p>
+        </div>
+        <div class="about-section">
+            <h2>Our Vision</h2>
+            <p>Our vision is to create a technologically advanced and student-friendly environment , fostering excellence in education and research.</p>
+        </div>
+        <div class="about-section">
+            <h2>Our Mission</h2>
+            <p>Our mission is to develop and implement cutting-edge solutions that optimize campus resources, promote transparency, and support the academic growth of every student.</p>
+        </div>
+    </div>
+    <div id="Developers" class="Developers-section">
+        <h2>Developers</h2>
+        <div class="team-member">
+            <h3>Sanu Kumar</h3>
+            <p>Web Developer who developed the complete website.</p>
+        </div>
+        <div class="team-member">
+            <h3>Anandmani Kumar</h3>
+            <p>Developer of the Face Recognition Software using Python.</p>
+        </div>
+        <div class="team-member">
+            <h3>Ronit Kumar</h3>
+            <p>Developer of the Chatbot using Python.</p>
+        </div>
+    </div>
+    <div id="home" class="page1">
+        <div class="page1left">
+            <div class="chatbot-container">
+                <div class="chatbot-header">Chatbot Of IIT Patna Student</div>
+             <div class="chatbot-messages">
+                    <div class="bot-message"></div>
+                    <p2>User :-{{user_input}}</p2>
+                <p>Bot :-{{bot_response}}</p>
+            </div>
+            <div>
+                <form method="post" action="{{url_for('chatbot')}}" class="chat-input">
+                    <input type="text"id="message1" name="message" placeholder="Message Chatbot.." required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+        <div class="page1right" id="webcam-container">
+            <video id="video" width="600" height="450" autoplay muted></video>
+            <canvas id="canvas" width="600" height="450"></canvas>
+        </div>
+    </div>
+    <div id="help" class="help-section">
+        <h2>Help</h2>
+        <p>For assistance, please contact us at support@smartcampussolutions.com.</p>
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send Message </button>
+            </form>
+        </div>
+    </div>
+    <div>
+        
+    </div>
+    <footer>
+        <p>&copy; 2024 Smart Campus Solutions. All rights reserved.</p>
+    </footer>
+    
+
+   </body>
+</html>   
