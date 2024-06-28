@@ -4,336 +4,462 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Campus Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-        * {
-            padding: 0;
-            margin: 0;
-            
-        }
+      @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    
+}
 
-        body {
-            background: rgb(115,107,241);
-            background: linear-gradient(90deg, rgba(115,107,241,1) 0%, rgba(0,204,255,1) 69%, rgba(114,231,255,1) 100%);
-            font-family: 'Jost', sans-serif;
-        }
+body {
+    background: rgba(255, 255, 255, 0.973);
+    /* background: linear-gradient(90deg, rgba(115,107,241,1) 0%, rgba(0,204,255,1) 69%, rgba(114,231,255,1) 100%); */
+    font-family: 'Jost', Arial;
+    scroll-behavior: smooth;
+    
+    
+}
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            align-items: center;
-            background-color: #0986cf4f;
-        }
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    width: 100%;
+    align-items: center;
+    background-color: #0f1111;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
 
-        .navbar .left, .navbar .right {
-            display: flex;
-            gap: 2rem;
-        }
+}
 
-        .navbar h1 {
-            font-size: 30px;
-            color: rgb(242, 234, 243);
-            text-shadow: 3px 3px 0px rgb(92, 92, 92);
-        }
+.navbar .left, .navbar .right {
+    display: flex;
+    gap: 2rem;
+}
 
-        .navbar a {
-            text-decoration: none;
-            color: rgba(13, 7, 161, 0.989);
-            font-weight: 600;
-        }
+.navbar h1 {
+    font-size: 30px;
+    font-family: Arial;
+    color: rgb(221, 234, 39);
+    text-shadow: 3px 3px 0px rgb(92, 92, 92);
+    
+}
 
-        .page1 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 50px;
-            gap: 100px;
-            flex-wrap: wrap;
-        }
+.navbar a {
+    text-decoration: none;
+    color: rgb(238, 237, 253);
+    font-weight: 600;
+    transition:color 0.3s ease ;
+}
+.navbar a:hover{
+    color: #00BFFF;
+}
+.page1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    gap: 100px;
+    flex-wrap: wrap;
+}
 
-        .page1left {
-            height: 1200px;
-            width: 1200px;
-            border: 3px rgb(61, 61, 61) solid;
-            border-radius: 50px;
-            filter: drop-shadow(10px 10px 10px black);
-            background-color: black;
-            display: flex;
-            flex-direction: column;
-            
-        }
+.page1left {
+    height: 550px;
+    width: 1200px;
+    margin-top: 20px;
+    border: 3px rgb(61, 61, 61) solid;
+    border-radius: 50px;
+    /* filter: drop-shadow(10px 10px 10px black); */
+    background-color: #8CBCB9;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.3s ease-in;
+    
+}
+.page1left:hover {
+    transform: scale(1.05);
+}
+/* .page1right {
+    height: 1200px;
+    width: 1200px;
+    margin-top: 100px;
+    border: 3px rgb(12, 4, 4) solid;
+    border-radius: 50px;
+    /* filter: drop-shadow(10px 10px 10px black); */
+    /* background-color: #8CBCB9; */
+    /* display: flex; */
+    /* justify-content: flex-end; */
+    /* align-items: center; */
+    /* flex-direction: column; */
+    /* transition: transform 0.3s ease-in-out; */
+/* } */
+/* .page1right:hover {
+    transform: scale(1.05); */
+/* } */
+.chatbot-header {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    background-color:transparent;
+    border-radius: 50px;
+    padding: 0px;
+    font-size: 60px;
+    align-items: center;
+    color: #fcfcfc;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-        .page1right {
-            height: 1200px;
-            width: 1200px;
-            margin-top: 700px;
-            border: 3px rgb(77, 77, 77) solid;
-            border-radius: 50px;
-            filter: drop-shadow(10px 10px 10px black);
-            background: linear-gradient(90deg, rgba(255,85,85,1) 0%, rgba(153,51,204,1) 69%, rgba(119,0,255,1) 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
+.chatbot-header h1 {
+    font-size: 2rem;
+    color: rgb(247, 240, 240);
+}
 
-       
+.chatbot-messages {
+    flex: 1;
+    background-color:transparent;
+    overflow-y: auto;
+    padding: 0px 0px;
+    border-radius: 10px;
+    margin: 0px;
+    align-self: flex-start;
+    text-align: flex-start;
+    height: 400px;
+    width: 1200px;
+    transition: opacity 1s ease-in;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
 
-        .chatbot-container {
-            background-color: transparent;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            filter: drop-shadow(10px 10px 10px black);
-            transition: all 0.3s ease;
-        }
+.chatbot-messages p2 {
+    color: black;
+    font-size: xx-large;
+    margin-left: 100px;
+}
+.chatbot-messages p {
+    color: black;
+    font-size: xx-large;
+    margin-left: 100px;
+    animation: typing 2s steps(40, end), blink-caret .75s step-end infinite;
+}
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+.chat-input {
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 20px;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    height: 50px;
+    width: 1100px;
+}
 
-        .chatbot-header {
-            display: flex;
-            justify-content: center;
-            height: 200px;
-            background-color: transparent;
-            padding: 5px;
-            font-size: 60px;
-            align-items: center;
-            color: #fcfcfc;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+.contact-form input , .contact-form textarea {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #090707;
+    border-radius: 10px;
+    font-size: xx-large;
+    transition: border-color 0.3s ease;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #007BFF;
+}
+.chat-input input {
+    flex: 1;
+    padding: 15px;
+    margin-top: 200;
+    border: 2px solid #090707;
+    border-radius: 10px;
+    font-size: xx-large;
+}
 
-        .chatbot-header h1 {
-            font-size: 2rem;
-            color: rgb(247, 240, 240);
-        }
+.chat-input button ,.contact-form button {
+    background-color: #dee8f1;
+    color: #007BFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-        .chatbot-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 30px 20px;
-            border-radius: 8px;
-            margin: 300px;
-            max-width: 100%;
-            max-height: 100%;
-            align-self: flex-end;
-            text-align: center;
-            height: 900px;
-            width:900px;
-        }
+.chat-input button:hover,.contact-form button:hover {
+    background-color: #007BFF;
+    color: #FFFFFF;
+}
 
-        .chatbot-messages p2 {
-            color: rgb(255, 255, 255);
-            font-size: xx-large;
-            margin-left: 100px;
-        }
+.about-section {
+    padding: 50px;
+    background-color: #8CBCB9;
+    margin: 20px auto ;
+    margin-top: 200px;
+    width: 60%;
+    border-radius: 40px;
+    /* filter: drop-shadow(0 0 10px gray); */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+    position:sticky;
+    margin-left: 5px;
+    /* transition: opacity 1s ease-in, transform 1s ease-in;
+    opacity: 0; 
+    transform: translateY(50px);
+    animation: fadeInSection 1s forwards 0.5s; */
 
-        .chatbot-messages p {
-            color: rgb(255, 255, 255);
-            font-size: xx-large;
-            margin-left: 100px;
-        }
+    
+}
 
-        .chat-input {
-            padding: 20px;
-            background-color: transparent;
-            display: flex;
-        }
 
-        .chat-input input , .contact-form input , .contact-form textarea {
-            flex: 1;
-            padding: 15px;
-            border: 2px solid #090707;
-            border-radius: 8px;
-            font-size: xx-large;
-        }
-        .chat-input input {
-            flex: 1;
-            padding: 15px;
-            margin-top: 200;
-            border: 2px solid #090707;
-            border-radius: 8px;
-            font-size: xx-large;
-        }
 
-        .chat-input button ,.contact-form button {
-            background-color: #dee8f1;
-            color: #007BFF;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+.who-we-are-section  {
+    padding: 50px;
+    background-color: #8D6A9F;
+    margin: 20px auto ;
+    width: 60%;
+    border-radius: 40px;
+    /* filter: drop-shadow(0 0 10px gray); */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    position:sticky;
+    margin-right: 5px;
+    /* transition: opacity 1s ease-in, transform 1s ease-in;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInSection 1s forwards 1s; */
+    
+}
+.Developers-section  {
+    padding: 50px;
+    background-color: #DDA448;
+    margin: 20px auto ;
+    width: 50%;
+    border-radius: 40px;
+    filter: drop-shadow(0 0 10px gray);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    position:sticky;
+    margin-left: 5px;
+    /* transition: opacity 1s ease-in, transform 1s ease-in;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInSection 1s forwards 1s; */
+}
+@keyframes fadeInSection {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.contact-form{
+    
+    background: linear-gradient(90deg, rgba(0,184,148,1) 0%, rgba(9,132,227,1) 69%, rgba(116,185,255,1) 100%);
+    margin-top: 100px ;
+    margin-bottom: 120px;
+    width: 60%;
+    border-radius: 40px;
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: left; 
+    margin-left: 100px;
+    
+    font-weight: bolder;
+    font-style: oblique;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-variant: normal;
+    
+    padding:20px;
+   
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
-        .chat-input button:hover,.contact-form button:hover {
-            background-color: #007BFF;
-            color: #FFFFFF;
-        }
 
-        .about-section{
-            padding: 50px;
-            background-color: black;
-            margin: 20px auto ;
-            width: 80%;
-            border-radius: 15px;
-            filter: drop-shadow(0 0 10px gray);
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 20px;
-        }
-        .who-we-are-section {
-            padding: 50px;
-            background:linear-gradient(90deg, rgba(255,87,255,1) 0%, rgba(255, 204, 51, 0.966) 69%, rgba(255,255,153,1) 100%);
-            ;
-            margin: 20px auto ;
-            width: 80%;
-            border-radius: 15px;
-            filter: drop-shadow(0 0 10px gray);
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 20px;
-        }
-        .Developers-section {
-            padding: 50px;
-            background:linear-gradient(90deg, rgba(0,147,233,1) 0%, rgba(0,220,180,1) 69%, rgba(114,255,182,1) 100%);
-            margin: 20px auto ;
-            width: 80%;
-            border-radius: 15px;
-            filter: drop-shadow(0 0 10px gray);
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 20px;
-        }
-        .help-section{
-            padding: 50px;
-            background: linear-gradient(90deg, rgba(0,184,148,1) 0%, rgba(9,132,227,1) 69%, rgba(116,185,255,1) 100%);
-            margin-top: 1600px ;
-            width: 80%;
-            border-radius: 15px;
-            filter: drop-shadow(0 0 10px gray);
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 30px; 
-        }
-        .contact-form  {
-            font-size: xx-large;
-            font-weight: bolder;
-            font-style: oblique;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-variant: normal;
-        }
-        #name{
-            font-size: xx-small;
-        }
-        #email{
-            font-size: xx-small;
-        }
-        #message{
-            font-size: xx-small;
-        }
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: red;
+}
+.contact-form label {
+    font-size: x-large;
+}
+#name{
+    font-size: medium;
+    margin: 10px;
+    width: 80%;
+}
+#email{
+    font-size: medium;
+    margin: 10px;
+    width: 80%;
+}
+#message{
+    font-size: medium;
+    margin: 10px;
+    width: 80%;
+}
 
-        .about-section h2, .who-we-are-section h2, .Developers-section h2 {
-            font-size: 2.5rem;
-            color: #0a0ad3;
-            margin-bottom: 20px;
-            flex-basis: 100%;
-        }
-        .help-section h2 {
-            font-size: 1.5;
-            color: #0a0ad3;
-            margin-bottom: 10px;
-            flex-basis: 100%;
-        }
+.about-section h2, .who-we-are-section h2, .Developers-section h2 {
+    font-size: 2.5rem;
+    color: #0a0ad3;
+    margin-bottom: 20px;
+    flex-basis: 100%;
+}
+.who-we-are-section h3{
+    font-size: 1.5rem;
+    color: white;
+}
+.help-section h2 {
+    font-size: 1.5;
+    color: #0a0ad3;
+    margin-bottom: 10px;
+    flex-basis: 100%;
+}
 
-        .about-section p, .who-we-are-section p, .Developers-section {
-            font-size: 1.5rem;
-            color: #f0fe58;
-            line-height: 1.6;
-            flex-basis: 100%;
-        }
-        .help-section p {
-            font-size: 1.5rem;
-            color: #f0fe58;
-            line-height: 1.0;
-            flex-basis: 100%;
-        }
-        .about-image {
-            flex: 1;
-        }
+.about-section p, .who-we-are-section p, .Developers-section {
+    font-size: 1.5rem;
+    color: black;
+    line-height: 1.6;
+    flex-basis: 100%;
+}
+.help-section p {
+    font-size: 1.5rem;
+    color: #0f1006;
+    line-height: 1.0;
+    flex-basis: 100%;
+    text-align: left;
+}
 
-        .about-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            filter: drop-shadow(0 0 10px gray);
-        }
 
-        .about-content {
-            flex: 2;
-        }
+.team-member {
+    margin-bottom: 20px;
+    flex-basis: 100%;
+}
 
-        .team-member {
-            margin-bottom: 20px;
-            flex-basis: 100%;
-        }
+.team-member h3 {
+    font-size: 2rem;
+    color: #00ff2a;
+}
 
-        .team-member h3 {
-            font-size: 2rem;
-            color: #00ff2a;
-        }
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #0f1111;
+    /* padding: 10px; */
+    height: 50px;
+    width: 100%;
+    color: #ffffff;
+    position: fixed;
+    bottom: 0px;
+}
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
 
-        footer {
-            background-color: #109bf8d7;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
+footer a:hover {
+    color: #00BFFF;
+}
+.footer-left p {
+    color: #fcfcfc;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.footer-right {
+    display: flex;
+    gap: 1rem;
+}
+.footer-right a i {
+    font-size: 20px;
+}
+#form{
+    width: 70%;
+}
+#textmessage{
+    margin-top: 10px;
+}
+ 
     </style>
 </head>
 <body>
-<header>
-    <div class="navbar">
-        <div class="left">
-            <a href="#HOME">HOME</a>
-        </div>
-        <h1>SMART CAMPUS SOLUTIONS</h1>
-        <div class="right">
-            <a href="#ABOUT">ABOUT</a>
-            <a href="#who-we-are">WHO WE ARE</a>
-            <a href="#Developers">DEVELOPERS</a>
-            <a href="#help">HELP</a>
-        </div>
+    <header>
+       <div  id="nav"  class="navbar">
+            <div class="left">
+                <a href="#home">Home</a>
+            </div>
+               <h1>SMART CAMPUS  SOLUTIONS</h1>
+            <div class="right">
+              <a href="#about">About</a>
+              <a href="#who-we-are">Who We Are</a>
+              <a href="#Developers">Developers</a>
+              <a href="#contact">Contact</a>
+            </div>
+       </div>
+    </header>
+         
+    <div id="about" class="about-section">
+        <div class="about-content">
+         <h2>About Us </h2>
+         <p>Smart Campus Solutions is a leading provider of innovative technologies for modern educational institutions. Our mission is to enhance the campus experience for students, faculty, and staff through advanced software solutions and comprehensive support services.</p>
+         <p>This website features an advanced Chatbot and a Face Recognition Attendance System designed by IIT Patna students. The Chatbot, developed using Python, assists students with their queries. The Face Recognition system ensures efficient and secure attendance tracking.</p>
+
+        </div>       
     </div>
-</header>
-<div id="about" class="about-section">
-    <div class="about-content">
-        <h2>About This Website</h2>
-        <p>This website features an advanced Chatbot and a Face Recognition Attendance System designed by IIT Patna students. The Chatbot, developed using Python, assists students with their queries. The Face Recognition system ensures efficient and secure attendance tracking.</p>
-    </div>       
-    </div>
-    <div id="who-we-are" class="who-we-are-section">
+    <div id="whoweare" class="who-we-are-section">
         <h2>Who We Are</h2>
-        <div class="about-section">
-            <h2>About This Project</h2>
+        <p>We are a team of dedicated Computer Science Student working in  software development, IT support, and educational technology. Our solutions are designed to streamline  efficient academic environment.</p>
+            <h3>About This Project</h3>
             <p>Smart Campus Solutions aims to enhance the educational experience  through innovative technology solutions. Our focus is on providing efficient tools like the Chatbot and Face Recognition Attendance System to streamline campus operations.</p>
-        </div>
-        <div class="about-section">
-            <h2>Our Vision</h2>
+    
+            <h3>Our Vision</h3>
             <p>Our vision is to create a technologically advanced and student-friendly environment , fostering excellence in education and research.</p>
-        </div>
-        <div class="about-section">
-            <h2>Our Mission</h2>
+    
+            <h3>Our Mission</h3>
             <p>Our mission is to develop and implement cutting-edge solutions that optimize campus resources, promote transparency, and support the academic growth of every student.</p>
-        </div>
+    
     </div>
     <div id="Developers" class="Developers-section">
-        <h2>Developers</h2>
+        <h2>Meet the Developers</h2>
+        <p>Our team of developers is passionate about creating user-friendly and impactful software in the tech industry, we bring innovative ideas to life and ensure our solutions are always at the cutting edge of technology.</p>
         <div class="team-member">
             <h3>Sanu Kumar</h3>
             <p>Web Developer who developed the complete website.</p>
@@ -350,7 +476,7 @@
     <div id="home" class="page1">
         <div class="page1left">
             <div class="chatbot-container">
-                <div class="chatbot-header">Chatbot Of IIT Patna Student</div>
+                <div class="chatbot-header">Chatbot</div>
              <div class="chatbot-messages">
                     <div class="bot-message"></div>
                     <p2>User :-{{user_input}}</p2>
@@ -358,39 +484,85 @@
             </div>
             <div>
                 <form method="post" action="{{url_for('chatbot')}}" class="chat-input">
-                    <input type="text"id="message1" name="message" placeholder="Message Chatbot.." required>
+                    <input type="text"id="message1" name="message" placeholder="Type your message here.." required>
                     <button type="submit">Send</button>
                 </form>
-            </div>
+            </div>    
+            
         </div>
-        <div class="page1right" id="webcam-container">
-            <video id="video" width="600" height="450" autoplay muted></video>
-            <canvas id="canvas" width="600" height="450"></canvas>
-        </div>
+        <!-- <div class="page1right">
+
+        </div> -->
     </div>
-    <div id="help" class="help-section">
-        <h2>Help</h2>
-        <p>For assistance, please contact us at support@smartcampussolutions.com.</p>
-        <div class="contact-form">
+    <form action="https://formspree.io/f/xkgwwzwe" method="post">
+        <div class="contact-form" id="contact">
             <h2>Contact Us</h2>
+            
             <form id="contactForm">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Send Message </button>
+                <label for="name"></label>
+                <input type="text" id="name" name="first" placeholder="First name" autocomplete="off" required>
+                <label for="name"></label>
+                <input type="text" id="name" name="last" placeholder="Last name" autocomplete="off" required>
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="Email Address"  autocomplete="off" required>
+                <label for="message"></label>
+                <textarea id="message" name="message" rows="4" cols="60" autocomplete="off" placeholder="Enter text .." required></textarea>
+                <button type="submit">Submit</button>
             </form>
         </div>
-    </div>
-    <div>
-        
-    </div>
+    </form>
     <footer>
-        <p>&copy; 2024 Smart Campus Solutions. All rights reserved.</p>
+        <div class="footer-left">
+            <p>&copy; 2024 Smart Tech Solutions. All rights reserved.</p>
+        </div>
+        <div class="footer-right">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var tl = gsap.timeline()
 
-   </body>
-</html>   
+        tl.from("#nav",{
+            opacity:0,
+            duration:0.5,
+            delay:0,           
+        })
+        tl.from("a",{
+            opacity:0,
+            duration:1,
+            stagger:0.3,
+        })
+        gsap.from("h1",{
+            opacity:0,
+            delay:0.3,
+            duration:1,
+            scale:2,
+        })
+        gsap.to("#about",{
+            x:500,
+            duration:3,
+            delay:0.3,
+            repeat:-1,
+            yoyo:true,
+        })
+        gsap.to("#whoweare",{
+            x:-500,
+            duration:3,
+            delay:0.3,
+            repeat:-1,
+            yoyo:true,
+        })
+        gsap.to("#Developers",{
+            x:600,
+            duration:3,
+            delay:0.3,
+            repeat:-1,
+            yoyo:true,
+        })
+    </script>
+</body>
+</html>
