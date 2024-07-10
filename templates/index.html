@@ -14,6 +14,19 @@
     font-family: Arial;
     
 }
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    .page1 {
+        flex-direction: column;
+        margin: 20px;
+    }
+    .about-section, .who-we-are-section, .Developers-section, .contact-form {
+        width: 90%;
+        margin: 20px auto;
+    }
+}
 
 body {
     background: rgba(255, 255, 255, 0.973);
@@ -417,6 +430,9 @@ footer a:hover {
 #textmessage{
     margin-top: 10px;
 }
+.footer-right{
+    color: #007BFF;
+}
  
     </style>
 </head>
@@ -471,6 +487,10 @@ footer a:hover {
         <div class="team-member">
             <h3>Ronit Kumar</h3>
             <p>Developer of the Chatbot using Python.</p>
+        </div>
+        <div class="team-member">
+            <h3>Gireesham kumar and Megha Keswani</h3>
+            <p>Worked on Back-end</p>
         </div>
     </div>
     <div id="home" class="page1">
